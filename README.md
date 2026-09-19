@@ -27,7 +27,7 @@ Gaps:
 | Stage | Details |
 |---|---|
 | **Model** | Fully fine-tuned ResNet-50 architecture with pre-trained weights; input of 256 × 256 pixels. |
-| **Training** | PyTorch. Class-weighted loss + square-root-weighted oversampling to counter a ~7.5× class imbalance. heavy augmentation. AdamW with cosine LR decay. Model was fine-tuned with a training-to-validation split of 0.8 for 30 epochs, with the final model trained with the full dataset (training-to-validation split of 1.0) at 20 epochs. The decision to run the final model for 20 epochs was due to compute constraints of Google Colab's free tier and that test accuracy plateaus well before epoch 20 in during finetuning.|
+| **Training** | PyTorch. Class-weighted loss and square-root-weighted oversampling to handle class imbalance. Heavy augmentation. AdamW with cosine LR decay. Model was fine-tuned with a training-to-validation split of 0.8 for 30 epochs, with the final model trained with the full dataset (training-to-validation split of 1.0) at 20 epochs. The decision to run the final model for 20 epochs was due to compute constraints of Google Colab's free tier and that test accuracy plateaus well before epoch 20 in during finetuning.|
 | **Prediction** | Trained model is exported to ONNX, run in-browser via onnxruntime-web. |
 | **Site** | Static HTML/CSS/JS hosted on GitHub Pages. |
 
