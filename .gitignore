@@ -1,0 +1,10 @@
+# Saved and checked models
+*.pth
+
+# ONNX export leftovers in the repo root (the deployed model lives in docs/model/)
+/*.onnx
+/*.onnx.data
+
+# Python artefacts
+__pycache__/
+*.pyc

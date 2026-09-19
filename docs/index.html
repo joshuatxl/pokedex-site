@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pokedex site</title>
+<meta name="description" content="Upload a photo and a CNN identifies which of the original 151 Pokémon it is.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page">
+  <div class="device">
+
+    <header class="chrome-bar">
+      <div class="title-tab">
+        <span class="title-dot" aria-hidden="true"></span>
+        Pokedex site
+      </div>
+      <div class="chrome-actions">
+        <button class="pill" id="themeToggle" type="button" aria-pressed="false">
+          <span id="themeIcon" aria-hidden="true">&#9789;</span>
+          <span id="themeLabel">Night&nbsp;Mode</span>
+        </button>
+        <a class="pill" href="https://github.com/joshuatxl/pokedex-site" target="_blank" rel="noopener">GitHub repo</a>
+      </div>
+    </header>
+
+    <div class="banner">
+      <p class="banner-text">Upload a photo (preferrably in .jpg or .png format) of one of the original 151 Pokemon, and the model will tell you what it is.</p>
+    </div>
+
+    <main class="body-grid">
+
+      <section class="identify-card" aria-labelledby="identify-heading">
+        <p class="eyebrow" id="identify-heading">Identify a Pok&eacute;mon</p>
+
+        <div class="identify-grid">
+          <div class="upload-col">
+            <label class="upload-zone" id="uploadZone">
+              <input type="file" id="fileInput" accept="image/*" class="visually-hidden">
+              <i class="upload-icon" aria-hidden="true">&#8593;</i>
+              <span class="upload-text">Drag and drop a photo,<br>or click to browse folders</span>
+            </label>
+
+            <div class="original-well" id="originalWell">
+              <span class="original-placeholder" id="originalPlaceholder">Your photo</span>
+            </div>
+          </div>
+
+          <div class="result-col">
+            <div class="preview-well" id="previewWell">
+              <span class="preview-placeholder" id="previewPlaceholder">Your result</span>
+            </div>
+
+            <div class="nameplate">
+              <h1 class="poke-name" id="pokeName">-</h1>
+              <div class="stat-row">
+                <div class="stat">
+                  <span class="stat-label">Dex&nbsp;No.</span>
+                  <span class="stat-value" id="dexValue">&mdash;</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-label">Type</span>
+                  <span class="stat-value" id="typeValue">&mdash;</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-label">Confidence</span>
+                  <span class="stat-value" id="confidenceValue">&mdash;</span>
+                </div>
+              </div>
+              <p class="result-note" id="resultNote" hidden></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="box-card" aria-labelledby="box-heading">
+        <div class="box-header">
+          <p class="eyebrow" id="box-heading">151 Original Pokemon</p>
+        </div>
+        <div class="box-grid" id="boxGrid"><!-- populated by script.js --></div>
+      </section>
+
+    </main>
+
+  </div>
+</div>
+
+<script src="classes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.23.2/dist/ort.min.js"></script>
+<script src="predict.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
