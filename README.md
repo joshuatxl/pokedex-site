@@ -2,7 +2,7 @@
 
 ## Project background and site link
 
-A convolutional neural network that identifies which of the original 151 Pokemon appears in a photo. The neural network model is a reworked version of an assignment as part **UNSW's ZZEN9444 Neural Networks, Deep Learning** course. 
+A convolutional neural network that identifies which of the original 151 Pokemon appears in a photo. The neural network model is a reworked version of an assignment submission for **UNSW's ZZEN9444 Neural Networks, Deep Learning** course, served on a static MkDocs site.
 
 Access the Pokedex site here: https://joshuatxl.github.io/pokedex-site/
 
@@ -57,4 +57,5 @@ Various aspects of the model submitted as part of the course assignment was rewo
 ## Limitations
 
 - Model is trained to identify only one Pokemon in an image, and will silently select the Pokemon with the highest confidence score if more than one Pokemon is present in an image.
+- Model is unable to identify Pokemon not part of the original 151.
 
